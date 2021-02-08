@@ -57,7 +57,9 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: atmoz/git-verify-ref@master
         with:
-          import-github-users: atmoz
+          import-github-users: 
+            - atmoz
+            - obayit
 
       - name: Push images to Docker Hub registry
         if: github.ref == 'refs/heads/master'
