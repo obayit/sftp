@@ -53,12 +53,6 @@ jobs:
       - name: Test alpine image
         run: tests/run $IMAGE_NAME:alpine
 
-      - name: Verify signature
-        if: github.ref == 'refs/heads/master'
-        uses: atmoz/git-verify-ref@master
-        with:
-          import-github-users: obayit
-
       - name: Push images to Docker Hub registry
         if: github.ref == 'refs/heads/master'
         run: |
